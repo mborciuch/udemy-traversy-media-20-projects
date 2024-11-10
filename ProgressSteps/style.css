@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+:root {
+    --circle-height: 30px;
+    --progress-bar-height: 4px;
+    --line-border-fill: #3498db;
+    --line-border-empty: #e0e0e0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f6f7fb;
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 24px;
+    max-width: 100%;
+    width: 350px;
+}
+
+.progress-container::before {
+    content: '';
+    position: absolute;
+    top: calc((var(--circle-height) / 2) - (var(--progress-bar-height) / 2));
+    height: var(--progress-bar-height);
+    background-color: var(--line-border-empty);
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.progress-bar {
+    background-color: var(--line-border-fill);
+    position: absolute;
+    top: calc((var(--circle-height) / 2) - (var(--progress-bar-height) / 2));
+    left: 0;
+    height: var(--progress-bar-height);
+    width: 0;
+    z-index: -1;
+    transition: 0.4s ease;
+}
+
+.circle {
+    background-color: #fff;
+    border-radius: 50%;
+    height: var(--circle-height);
+    width: var(--circle-height);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: 3px solid var(--line-border-empty);
+}
+
+.circle.active {
+    border-color: var(--line-border-fill);
+}
+
+.btn {
+    background-color: var(--line-border-fill);
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 8px 30px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:disabled {
+    background-color: var(--line-border-empty);
+    cursor: not-allowed;
+}
