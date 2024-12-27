@@ -8,30 +8,22 @@
 </head>
 <body>
 <main>
-    <form>
+    <div class="container">
         <h1>Please Login</h1>
-        <label for="login">
-            <span>L</span>
-            <span>O</span>
-            <span>G</span>
-            <span>I</span>
-            <span>N</span>
-        </label>
-        <input id="login" type="text">
-        <label for="password">
-            <span>P</span>
-            <span>A</span>
-            <span>S</span>
-            <span>S</span>
-            <span>W</span>
-            <span>O</span>
-            <span>R</span>
-            <span>D</span>
-        </label>
-        <input id="password" type="password">
-        <button type="submit">Login</button>
-        <p>Don't have an account? <a class="register-link" href="">Register</a></p>
-    </form>
+        <form>
+            <div class="form-control">
+
+                <input id="login" required type="text">
+                <label for="login">Email</label>
+            </div>
+            <div class="form-control">
+                <input id="password" required type="password">
+                <label for="password">Password</label>
+            </div>
+            <button class="btn" type="submit">Login</button>
+            <p class="text">Don't have an account? <a class="register-link" href="#">Register</a></p>
+        </form>
+    </div>
 </main>
 <script src="script.js"></script>
 </body>
